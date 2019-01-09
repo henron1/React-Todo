@@ -19,7 +19,7 @@ const todoData = [
 ]
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       dataList: todoData,
@@ -29,8 +29,8 @@ class App extends React.Component {
   }
   
  handleChanges = event => {
-   this.setState({ [event.target.task]: event.target.value })
- }
+   this.setState({ [event.target.name]: event.target.value })
+ };
 
  addNewTodo = event => {
    event.preventDefault();
@@ -39,7 +39,7 @@ class App extends React.Component {
        ...this.state.dataList,
        { task: this.state.task}
      ],
-     task:''
+     task: ''
    });
  };
   
@@ -48,7 +48,7 @@ class App extends React.Component {
       <div className='App'>
         <TodoList todoDataList={this.state.dataList} />
         <TodoForm 
-          addNewToDo={this.addNewTodo}
+          addNewTodo={this.addNewTodo}
           handleChanges={this.handleChanges}
           task={this.state.task}
           id={this.state.id}
