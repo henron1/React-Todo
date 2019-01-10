@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Todo.css"
 function Todo(props) {
-    console.log(props)
+    // console.log(props)
     return (
         <div
             className={props.todo.completed ? 'true': null}

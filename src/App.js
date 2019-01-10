@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import TodoList from './components/TodoComponents/TodoList.js'
 import TodoForm from './components/TodoComponents/TodoForm.js'
-// import '../Todo.css'
+
 const todoData = [
   {
     task: 'Organize Garage',
@@ -45,7 +45,7 @@ class App extends React.Component {
  };
 
  toggleTodo = id => {
-   console.log(id);
+  //  console.log(id);
    this.setState({
      dataList: this.state.dataList.map(thing => {
        if (id !== thing.id){
@@ -59,6 +59,14 @@ class App extends React.Component {
      })
    });
  };
+
+ clearButton = event => {
+   event.preventDefault();
+   this.setState({
+     dataList: this.state.dataList.filter(thing => thing.completed === false)
+     
+   })
+ }
   
   render() {
     return (
@@ -66,8 +74,10 @@ class App extends React.Component {
         <TodoList 
           todoDataList={this.state.dataList} 
           toggleTodo={this.toggleTodo}
+          
         />
         <TodoForm 
+          clearButton={this.clearButton}
           addNewTodo={this.addNewTodo}
           handleChanges={this.handleChanges}
           task={this.state.task}

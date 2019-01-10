@@ -3,7 +3,7 @@ import Todo from './Todo.js'
 
 
 function TodoList (props){
-    console.log(props)
+    // console.log(props)
     return(
         <div>
             <h1>ToDo List Made With React</h1>
