@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import './App.css'
 import TodoList from './components/TodoComponents/TodoList.js'
 import TodoForm from './components/TodoComponents/TodoForm.js'
 
 const todoData = [
   {
-    task: 'Organize Garage',
-    id: '2' ,
+    task: '',
+    id: '' ,
     completed: false
   },
   {
-    task: 'Bake Cookies',
-    id: '3',
+    task: '',
+    id: '',
     completed:false
   }
 
